@@ -1,6 +1,6 @@
-# The oSync Specification #
+# The OSync Specification #
 
-## Why oSync? ##
+## Why OSync? ##
 
 Sure we have [RSS](http://cyber.law.harvard.edu/rss/rss.html), [RDF](http://www.w3.org/TR/REC-rdf-syntax/), 
 and [Atom](http://www.atomenabled.org/developers/syndication/atom-format-spec.php) which I have been working with 
@@ -21,7 +21,7 @@ While developing this format I set out with the following goals:
 ### Note ###
 
 This specification is considered ALPHA, and not ready for production use as it could change, I welcome everyone to please
-come and comment in the [oSync Development Google Group](http://groups.google.com/group/osync-development)
+come and comment in the [OSync Development Google Group](http://groups.google.com/group/osync-development)
 
 ### Example ###
 
@@ -30,11 +30,11 @@ come and comment in the [oSync Development Google Group](http://groups.google.co
         "subtitle": "Content Syndcation via JSONP",
         "id": "c4dfcb75-8cd5-47e1-8a09-b19141ec2df8",
         "lang": "en",
-        "title": "News about oSync",
+        "title": "News about OSync",
         "image": "http://www.osync.org/media/osync-600x600.jpg",
         "generator": "TextMate http://macromates.com/",
         "permalinkUrl": "http://www.osync.org",
-        "summary": "All the news you can use about your favorite new web syndication format oSync",
+        "summary": "All the news you can use about your favorite new web syndication format OSync",
         "copyrite": "Creative Commons Attribution-Noncommercial-No Derivative Works 3.0",
         "copyriteImage": "http://creativecommons.org/images/public/somerights20.png",
         "postedTime": "2009-08-05T11:17Z",
@@ -56,9 +56,9 @@ come and comment in the [oSync Development Google Group](http://groups.google.co
         "items": [
             {
                 "updatedDate": "2009-08-05T11:17Z",
-                "body": "We lauched oSync today! we had a big party and it was all kinds of fun. I hope you like it!",
+                "body": "We lauched OSync today! we had a big party and it was all kinds of fun. I hope you like it!",
                 "id": "fd8e3a0e-5786-4583-9baa-bb65537eed70",
-                "title": "oSync Launched!",
+                "title": "OSync Launched!",
                 "author": {
                     "email": "ray.slakinski@gmail.com",
                     "name": "Ray Slakinski",
@@ -77,7 +77,7 @@ come and comment in the [oSync Development Google Group](http://groups.google.co
                     "latitude": 43.439957,
                     "longitude": -79.772072 
                 },
-                "exeprt": "We lauched oSync today!",
+                "exeprt": "We lauched OSync today!",
                 "postedTime": "2009-08-05T11:17Z",
                 "categories": [
                     "web",
@@ -108,7 +108,7 @@ come and comment in the [oSync Development Google Group](http://groups.google.co
 ### Main Elements ###
 
 * id: Unique ID for the feed itself, great for using in conjunction with [SUP](http://code.google.com/p/simpleupdateprotocol/), [PubSubHubbub](http://code.google.com/p/pubsubhubbub/) or [rssCloud](http://rsscloud.org/)
-* hub: A central place to see which oSync feeds have been updated. Usually a location for a servers [SUP](http://code.google.com/p/simpleupdateprotocol/), [PubSubHubbub](http://code.google.com/p/pubsubhubbub/) or [rssCloud](http://rsscloud.org/) location _(Optional)_
+* hub: A central place to see which OSync feeds have been updated. Usually a location for a servers [SUP](http://code.google.com/p/simpleupdateprotocol/), [PubSubHubbub](http://code.google.com/p/pubsubhubbub/) or [rssCloud](http://rsscloud.org/) location _(Optional)_
 * title: Title of the feed
 * subtitle: Subtitle for this feed _(Optional)_
 * summary: A short description of this feed _(Optional)_
