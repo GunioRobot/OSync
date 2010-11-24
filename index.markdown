@@ -95,7 +95,7 @@ come and comment in the [OSync Development Google Group](http://groups.google.co
                         "filename": "osync-podcast-01.mp3",
                         "duration": 923282,
                         "type": "audio/mpeg",
-                        "blockConsumer": false,
+                        "hidden": false,
                         "bytes": 228223
                     }
                 ]
@@ -178,6 +178,6 @@ come and comment in the [OSync Development Google Group](http://groups.google.co
 * hashType: To be specified if hash is set and is not MD5 (MD5 is assumed) _(Optional)_
  * Note: Use lowercase (md5, sha256)
 * explicit: Does the content contain explicit material? False if not specified _(Optional)_
-* blockConsumer: This should stop a consumer from showing this file in their UI. False if not specified _(Optional)_
+* hidden: This should stop a consumer from showing this file in their UI. False if not specified _(Optional)_
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" /></a>
