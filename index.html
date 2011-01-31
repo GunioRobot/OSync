@@ -47,205 +47,201 @@
 
 	<h1 id="the_osync_specification">The OSync Specification</h1>
 
-	<h2 id="why_osync">Why OSync?</h2>
+    <h2 id="why_osync">Why OSync?</h2>
 
-	<p>Sure we have <a href="http://cyber.law.harvard.edu/rss/rss.html">RSS</a>, <a href="http://www.w3.org/TR/REC-rdf-syntax/">RDF</a>, 
-	and <a href="http://www.atomenabled.org/developers/syndication/atom-format-spec.php">Atom</a> which I have been working with 
-	for many years. There is one big issues with these formats&#8230; They all use 
-	<a href="http://en.wikipedia.org/wiki/XML">XML</a> which tends to be wordy and more importantly XML is overly complex to parse 
-	especially in languages like Javascript, PHP, Ruby and Python. However <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> thankfully is! </p>
+    <p>Sure we have <a href="http://cyber.law.harvard.edu/rss/rss.html">RSS</a>, <a href="http://www.w3.org/TR/REC-rdf-syntax/">RDF</a>, 
+    and <a href="http://www.atomenabled.org/developers/syndication/atom-format-spec.php">Atom</a> which I have been working with 
+    for many years. There is one big issues with these formats&#8230; They all use 
+    <a href="http://en.wikipedia.org/wiki/XML">XML</a> which tends to be wordy and more importantly XML is overly complex to parse 
+    especially in languages like Javascript, PHP, Ruby and Python. However <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> thankfully is! </p>
 
-	<p>While developing this format I set out with the following goals:</p>
+    <p>While developing this format I set out with the following goals:</p>
 
-	<ul>
-	<li>Easy/fast to parse and implement</li>
-	<li>Make it so feeds and items are location aware</li>
-	<li>a proper tagging system for feeds/items/attachments</li>
-	<li>multiple attachments</li>
-	<li>Able to be used cross-site/domain
-	<ul>
-	<li>Uses <a href="http://en.wikipedia.org/wiki/JSON#JSONP">JSONP</a></li>
-	</ul></li>
-	<li>Incorporate some of the RSS extension elements that were used in common implementations</li>
-	</ul>
+    <ul>
+    <li>Easy/fast to parse and implement</li>
+    <li>Make it so feeds and items are location aware</li>
+    <li>a proper tagging system for feeds/items/attachments</li>
+    <li>multiple attachments</li>
+    <li>Able to be used cross-site/domain
+    <ul>
+    <li>Uses <a href="http://en.wikipedia.org/wiki/JSON#JSONP">JSONP</a></li>
+    </ul></li>
+    <li>Incorporate some of the RSS extension elements that were used in common implementations</li>
+    </ul>
 
-	<h3 id="note">Note</h3>
+    <h3 id="note">Note</h3>
 
-	<p>This specification is considered ALPHA, and not ready for production use as it could change, I welcome everyone to please
-	come and comment in the <a href="http://groups.google.com/group/osync-development">OSync Development Google Group</a></p>
+    <p>This specification is considered ALPHA, and not ready for production use as it could change, I welcome everyone to please
+    come and comment in the <a href="http://groups.google.com/group/osync-development">OSync Development Google Group</a></p>
 
-	<h3 id="example">Example</h3>
+    <h3 id="example">Example</h3>
 
-	<pre><code>{
-	    "updatedDate": "2009-08-05T12:17Z",
-	    "subtitle": "Content Syndcation via JSONP",
-	    "id": "c4dfcb75-8cd5-47e1-8a09-b19141ec2df8",
-	    "lang": "en",
-	    "title": "News about OSync",
-	    "image": "http://www.osync.org/media/osync-600x600.jpg",
-	    "generator": "TextMate http://macromates.com/",
-	    "permalinkUrl": "http://www.osync.org",
-	    "summary": "All the news you can use about your favorite new web syndication format OSync",
-	    "copyrite": "Creative Commons Attribution-Noncommercial-No Derivative Works 3.0",
-	    "copyriteImage": "http://creativecommons.org/images/public/somerights20.png",
-	    "postedTime": "2009-08-05T11:17Z",
-	    "thumbnail": "http://www.osync.org/media/osync-32x32.jpg",
-	    "categories": [
-	        "web",
-	        "formats",
-	        "specifications" 
-	    ],
-	    "location": {
-	        "name": "Funky Thai",
-	        "address": "2383 Dundas Street West",
-	        "city": "Oakville",
-	        "state": "Ontario",
-	        "zip": "L6M3X2",
-	        "latitude": 43.439957,
-	        "longitude": -79.772072 
-	    },
-	    "items": [
-	        {
-	            "updatedDate": "2009-08-05T11:17Z",
-	            "body": "We lauched OSync today! we had a big party and it was all kinds of fun. I hope you like it!",
-	            "id": "fd8e3a0e-5786-4583-9baa-bb65537eed70",
-	            "title": "OSync Launched!",
-	            "author": {
-	                "email": "ray.slakinski@gmail.com",
-	                "name": "Ray Slakinski",
-	                "permalinkUrl": "http://www.slakinski.com"
-	            },
-	            "sources": [
-	                "http://www.osync.org"
-	            ],
-	            "permalinkUrl": "http://www.osync.org/posts/osync-launched",
-	            "location": {
-	                "name": "Funky Thai",
-	                "address": "2383 Dundas Street West",
-	                "city": "Oakville",
-	                "state": "Ontario",
-	                "zip": "L6M3X2",
-	                "latitude": 43.439957,
-	                "longitude": -79.772072 
-	            },
-	            "exeprt": "We lauched OSync today!",
-	            "postedTime": "2009-08-05T11:17Z",
-	            "categories": [
-	                "web",
-	                "formats",
-	                "specifications" 
-	            ],
-	            "attachments": [
-	                {
-	                    "hash": "6c6d81147f00bd6adb710d22bfe69f05",
-	                    "id": "25746ef0-b362-4d38-b4e6-a0443c634d7e",
-	                    "postedTime": "2009-08-05T11:17Z",
-	                    "explicit": false,
-	                    "permalinkUrl": "http://www.osync.org/pcasts/osync-podcast-01.mp3",
-	                    "hashType": "md5",
-	                    "filename": "osync-podcast-01.mp3",
-	                    "duration": 923282,
-	                    "type": "audio/mpeg",
-	                    "hidden": false,
-	                    "bytes": 228223
-	                }
-	            ]
-	        }
-	    ]
-	}
-	</code></pre>
+    <pre><code>{
+        "updatedDate": "2009-08-05T12:17Z",
+        "subtitle": "Content Syndcation via JSONP",
+        "id": "c4dfcb75-8cd5-47e1-8a09-b19141ec2df8",
+        "lang": "en",
+        "title": "News about OSync",
+        "image": "http://www.osync.org/media/osync-600x600.jpg",
+        "generator": "TextMate http://macromates.com/",
+        "permalinkUrl": "http://www.osync.org",
+        "summary": "All the news you can use about your favorite new web syndication format OSync",
+        "copyrite": "Creative Commons Attribution-Noncommercial-No Derivative Works 3.0",
+        "copyriteImage": "http://creativecommons.org/images/public/somerights20.png",
+        "postedTime": "2009-08-05T11:17Z",
+        "thumbnail": "http://www.osync.org/media/osync-32x32.jpg",
+        "categories": [
+            "web",
+            "formats",
+            "specifications" 
+        ],
+        "location": {
+            "name": "Funky Thai",
+            "address": "2383 Dundas Street West",
+            "city": "Oakville",
+            "state": "Ontario",
+            "zip": "L6M3X2",
+            "latitude": 43.439957,
+            "longitude": -79.772072 
+        },
+        "items": [
+            {
+                "updatedDate": "2009-08-05T11:17Z",
+                "body": "We lauched OSync today! we had a big party and it was all kinds of fun. I hope you like it!",
+                "id": "fd8e3a0e-5786-4583-9baa-bb65537eed70",
+                "title": "OSync Launched!",
+                "author": {
+                    "email": "ray.slakinski@gmail.com",
+                    "name": "Ray Slakinski",
+                    "permalinkUrl": "http://www.slakinski.com"
+                },
+                "sources": [
+                    "http://www.osync.org"
+                ],
+                "permalinkUrl": "http://www.osync.org/posts/osync-launched",
+                "location": {
+                    "name": "Funky Thai",
+                    "address": "2383 Dundas Street West",
+                    "city": "Oakville",
+                    "state": "Ontario",
+                    "zip": "L6M3X2",
+                    "latitude": 43.439957,
+                    "longitude": -79.772072 
+                },
+                "exeprt": "We lauched OSync today!",
+                "postedTime": "2009-08-05T11:17Z",
+                "categories": [
+                    "web",
+                    "formats",
+                    "specifications" 
+                ],
+                "attachments": [
+                    {
+                        "hash": "md5-6c6d81147f00bd6adb710d22bfe69f05",
+                        "id": "25746ef0-b362-4d38-b4e6-a0443c634d7e",
+                        "postedTime": "2009-08-05T11:17Z",
+                        "explicit": false,
+                        "permalinkUrl": "http://www.osync.org/pcasts/osync-podcast-01.mp3",
+                        "filename": "osync-podcast-01.mp3",
+                        "duration": 923282,
+                        "type": "audio/mpeg",
+                        "hidden": false,
+                        "bytes": 228223
+                    }
+                ]
+            }
+        ]
+    }
+    </code></pre>
 
-	<h2 id="specification">Specification</h2>
+    <h2 id="specification">Specification</h2>
 
-	<h3 id="main_elements">Main Elements</h3>
+    <h3 id="main_elements">Main Elements</h3>
 
-	<ul>
-	<li>id: Unique ID for the feed itself, great for using in conjunction with <a href="http://code.google.com/p/simpleupdateprotocol/">SUP</a>, <a href="http://code.google.com/p/pubsubhubbub/">PubSubHubbub</a> or <a href="http://rsscloud.org/">rssCloud</a></li>
-	<li>hub: A central place to see which OSync feeds have been updated. Usually a location for a servers <a href="http://code.google.com/p/simpleupdateprotocol/">SUP</a>, <a href="http://code.google.com/p/pubsubhubbub/">PubSubHubbub</a> or <a href="http://rsscloud.org/">rssCloud</a> location <em>(Optional)</em></li>
-	<li>title: Title of the feed</li>
-	<li>subtitle: Subtitle for this feed <em>(Optional)</em></li>
-	<li>summary: A short description of this feed <em>(Optional)</em></li>
-	<li>permalinkUrl: permalinkUrl to where on this content came from</li>
-	<li>lang: Based on the <a href="http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes">W3C standard language codes</a></li>
-	<li>copyrite: A string describing the copyrite for this feed</li>
-	<li>copyriteImage: Image representation of copyrite, such as a <a href="http://creativecommons.org/">Creative Commons</a> logo <em>(Optional)</em></li>
-	<li>location: See <a href="#">Location</a> <em>(Optional)</em></li>
-	<li>postedTime: Date the feed was first published in <a href="http://en.wikipedia.org/wiki/ISO-8601">ISO 8601</a> format example: 2009-08-05T11:17Z</li>
-	<li>updatedDate: Last time the feed was updated <em>(Optional)</em></li>
-	<li>generator: What application/script created this output. Helpful for debugging. <em>(Optional)</em></li>
-	<li>categories: See <a href="#">Categoies</a> <em>(Optional)</em></li>
-	<li>image: Should be a square .jpg image that is at least 600 x 600 pixels</li>
-	<li>thumbnail: A thumbnail version (32x32) of the image in the &#8216;image&#8217; key</li>
-	<li>items: A list of items (see below for item description)</li>
-	</ul>
+    <ul>
+    <li>id: Unique ID for the feed itself, great for using in conjunction with <a href="http://code.google.com/p/simpleupdateprotocol/">SUP</a>, <a href="http://code.google.com/p/pubsubhubbub/">PubSubHubbub</a> or <a href="http://rsscloud.org/">rssCloud</a></li>
+    <li>hub: A central place to see which OSync feeds have been updated. Usually a location for a servers <a href="http://code.google.com/p/simpleupdateprotocol/">SUP</a>, <a href="http://code.google.com/p/pubsubhubbub/">PubSubHubbub</a> or <a href="http://rsscloud.org/">rssCloud</a> location <em>(Optional)</em></li>
+    <li>title: Title of the feed</li>
+    <li>subtitle: Subtitle for this feed <em>(Optional)</em></li>
+    <li>summary: A short description of this feed <em>(Optional)</em></li>
+    <li>permalinkUrl: permalinkUrl to where on this content came from</li>
+    <li>lang: Based on the <a href="http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes">W3C standard language codes</a></li>
+    <li>copyrite: A string describing the copyrite for this feed</li>
+    <li>copyriteImage: Image representation of copyrite, such as a <a href="http://creativecommons.org/">Creative Commons</a> logo <em>(Optional)</em></li>
+    <li>location: See <a href="#">Location</a> <em>(Optional)</em></li>
+    <li>postedTime: Date the feed was first published in <a href="http://en.wikipedia.org/wiki/ISO-8601">ISO 8601</a> format example: 2009-08-05T11:17Z</li>
+    <li>updatedDate: Last time the feed was updated <em>(Optional)</em></li>
+    <li>generator: What application/script created this output. Helpful for debugging. <em>(Optional)</em></li>
+    <li>categories: See <a href="#">Categoies</a> <em>(Optional)</em></li>
+    <li>image: Should be a square .jpg image that is at least 600 x 600 pixels</li>
+    <li>thumbnail: A thumbnail version (32x32) of the image in the &#8216;image&#8217; key</li>
+    <li>items: A list of items (see below for item description)</li>
+    </ul>
 
-	<h3 id="globals">Globals</h3>
+    <h3 id="globals">Globals</h3>
 
-	<h4 id="location">Location</h4>
+    <h4 id="location">Location</h4>
 
-	<ul>
-	<li>name: The name for the location <em>(Optional)</em></li>
-	<li>address: Street Address <em>(Optional)</em></li>
-	<li>city: City, Town, or Village for the location <em>(Optional)</em></li>
-	<li>state: State or Provence <em>(Optional)</em></li>
-	<li>zip: ZIPCODE or Postal Code <em>(Optional)</em></li>
-	<li>latitude: Latitude <em>(Optional if longitude not specified)</em></li>
-	<li>longitude: Longitude <em>(Optional if latitude not specified)</em></li>
-	</ul>
+    <ul>
+    <li>name: The name for the location <em>(Optional)</em></li>
+    <li>address: Street Address <em>(Optional)</em></li>
+    <li>city: City, Town, or Village for the location <em>(Optional)</em></li>
+    <li>state: State or Provence <em>(Optional)</em></li>
+    <li>zip: ZIPCODE or Postal Code <em>(Optional)</em></li>
+    <li>latitude: Latitude <em>(Optional if longitude not specified)</em></li>
+    <li>longitude: Longitude <em>(Optional if latitude not specified)</em></li>
+    </ul>
 
-	<h4 id="categories">Categories</h4>
+    <h4 id="categories">Categories</h4>
 
-	<ul>
-	<li>categories: A list of categories/keywords/tags that you wish to associate with this item</li>
-	</ul>
+    <ul>
+    <li>categories: A list of categories/keywords/tags that you wish to associate with this item</li>
+    </ul>
 
-	<h3 id="items">Items</h3>
+    <h3 id="items">Items</h3>
 
-	<ul>
-	<li>id: Unique ID for this item</li>
-	<li>title: title for this item</li>
-	<li>permalinkUrl: Permanent URL of where to find this item</li>
-	<li>sources: A list of sources for this item. Sites like digg.com might want to specify the original article here. <em>(Optional)</em></li>
-	<li>location: See <a href="#">Location</a> <em>(Optional)</em></li>
-	<li>postedTime: Date item was first published in <a href="http://en.wikipedia.org/wiki/ISO-8601">ISO 8601</a> format example: 2009-08-05T11:17Z</li>
-	<li>updatedDate: Last time the item was updated <em>(Optional)</em></li>
-	<li>summary: A short description of this item <em>(Optional)</em></li>
-	<li>body: The full text for this item</li>
-	<li>author: Defines the author for this item (see below for description)</li>
-	<li>contributors: a list of authors that also contributed to this item (see author description below) <em>(Optional)</em></li>
-	<li>categories: See <a href="#">Categoies</a> <em>(Optional)</em></li>
-	<li>attachments: A list of attached resources for this item (see below for description) <em>(Optional)</em></li>
-	</ul>
+    <ul>
+    <li>id: Unique ID for this item</li>
+    <li>title: title for this item</li>
+    <li>permalinkUrl: Permanent URL of where to find this item</li>
+    <li>sources: A list of sources for this item. Sites like digg.com might want to specify the original article here. <em>(Optional)</em></li>
+    <li>location: See <a href="#">Location</a> <em>(Optional)</em></li>
+    <li>postedTime: Date item was first published in <a href="http://en.wikipedia.org/wiki/ISO-8601">ISO 8601</a> format example: 2009-08-05T11:17Z</li>
+    <li>updatedDate: Last time the item was updated <em>(Optional)</em></li>
+    <li>summary: A short description of this item <em>(Optional)</em></li>
+    <li>body: The full text for this item</li>
+    <li>author: Defines the author for this item (see below for description)</li>
+    <li>contributors: a list of authors that also contributed to this item (see author description below) <em>(Optional)</em></li>
+    <li>categories: See <a href="#">Categoies</a> <em>(Optional)</em></li>
+    <li>attachments: A list of attached resources for this item (see below for description) <em>(Optional)</em></li>
+    </ul>
 
-	<h4 id="author">Author</h4>
+    <h4 id="author">Author</h4>
 
-	<ul>
-	<li>name: Full name of the author</li>
-	<li>permalinkUrl: Permanent URL of where you can find the author online</li>
-	<li>email: E-Mail address of where you can contact the author <em>(Optional)</em></li>
-	</ul>
+    <ul>
+    <li>name: Full name of the author</li>
+    <li>permalinkUrl: Permanent URL of where you can find the author online</li>
+    <li>email: E-Mail address of where you can contact the author <em>(Optional)</em></li>
+    </ul>
 
-	<h4 id="attachments">Attachments</h4>
+    <h4 id="attachments">Attachments</h4>
 
-	<ul>
-	<li>id: Unique ID for this attachment</li>
-	<li>filename: Allows you to specify a specific name for this file <em>(Optional)</em></li>
-	<li>permalinkUrl: Permanent URL of where to find this attachment</li>
-	<li>postedTime: Date item was first published in <a href="http://en.wikipedia.org/wiki/ISO-8601">ISO 8601</a> format example: 2009-08-05T11:17Z</li>
-	<li>mimeType: <a href="http://www.webmaster-toolkit.com/mime-types.shtml">mime-type</a> that defines what type of attachment this is</li>
-	<li>bytes: Attachment size in bytes</li>
-	<li>duration: Duration in seconds, should be specified if type is audio or video <em>(Optional)</em></li>
-	<li>location: See <a href="#">Location</a> <em>(Optional)</em></li>
-	<li>categories: See <a href="#">Categoies</a></li>
-	<li>hash: <a href="http://www.electrictoolbox.com/article/linux-unix-bsd/howto-check-md5-file/">Hash for the file</a>. Hashes are useful to help the consumer that they downloaded the file correctly <em>(Optional)</em></li>
-	<li>hashType: To be specified if hash is set and is not MD5 (MD5 is assumed) <em>(Optional)</em>
-	<ul>
-	<li>Note: Use lowercase (md5, sha256)</li>
-	</ul></li>
-	<li>explicit: Does the content contain explicit material? False if not specified <em>(Optional)</em></li>
-	<li>hidden: This should stop a consumer from showing this file in their UI. False if not specified <em>(Optional)</em></li>
-	</ul>
+    <ul>
+    <li>id: Unique ID for this attachment</li>
+    <li>filename: Allows you to specify a specific name for this file <em>(Optional)</em></li>
+    <li>permalinkUrl: Permanent URL of where to find this attachment</li>
+    <li>postedTime: Date item was first published in <a href="http://en.wikipedia.org/wiki/ISO-8601">ISO 8601</a> format example: 2009-08-05T11:17Z</li>
+    <li>mimeType: <a href="http://www.webmaster-toolkit.com/mime-types.shtml">mime-type</a> that defines what type of attachment this is</li>
+    <li>bytes: Attachment size in bytes</li>
+    <li>duration: Duration in seconds, should be specified if type is audio or video <em>(Optional)</em></li>
+    <li>location: See <a href="#">Location</a> <em>(Optional)</em></li>
+    <li>categories: See <a href="#">Categoies</a></li>
+    <li>hash: <a href="http://www.electrictoolbox.com/article/linux-unix-bsd/howto-check-md5-file/">Hash for the file</a>. Hashes are useful to help the consumer that they downloaded the file correctly. Prefix hashes with the hashing algorithm followed by a dash for example &#8220;md5-5b7c86d36cf17ada4853b1cbbdedf47f&#8221; <em>(Optional)</em></li>
+    <li>explicit: Does the content contain explicit material? False if not specified <em>(Optional)</em></li>
+    <li>hidden: This should stop a consumer from showing this file in their UI. False if not specified <em>(Optional)</em></li>
+    </ul>
 
-	<p><a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" /></a></p>
+    <p><a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" /></a></p>
+    
 </body>
 </html>
